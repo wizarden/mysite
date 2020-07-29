@@ -28,7 +28,7 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s, %s" % (self.price, self.name)
+        return "%s" % (self.name)
 
     class Meta:
         verbose_name = 'Товар'
@@ -44,7 +44,7 @@ class ProductImage(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s" % self.pk
+        return "%s" % self.image
 
     class Meta:
         verbose_name = 'Фотография'
