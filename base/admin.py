@@ -1,10 +1,8 @@
 from django.contrib import admin
-from .models import * # Item, ProductImage, Product, ProductCategory
+from .models import *
 
 
-# Register your models here.
-
-class ProductImageInline(admin.TabularInline):
+class ProductImageInline(admin.StackedInline):
     model = ProductImage
     extra = 0
 
@@ -17,7 +15,35 @@ class ProductAdmin (admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 
-admin.site.register(Item)
-admin.site.register(ProductImage)
+#################################################
 
-admin.site.register(ProductCategory)
+class ProductImageAdmin (admin.ModelAdmin):
+    list_display = [field.name for field in ProductImage._meta.fields]
+
+    class Meta:
+        model = ProductImage
+
+admin.site.register(ProductImage, ProductImageAdmin)
+
+#################################################
+
+class ProductCategoryAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in ProductCategory._meta.fields]
+
+    class Meta:
+        model = ProductCategory
+
+admin.site.register(ProductCategory, ProductCategoryAdmin)
+
+#################################################
+
+
+
+
+# admin.site.register(Item)
+
+
+
+
+#dmin.site.register(ProductImage)
+
