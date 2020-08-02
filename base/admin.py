@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 
-class ProductImageInline(admin.StackedInline):
+class ProductImageInline(admin.TabularInline): #TabularInline StackedInline
     model = ProductImage
     extra = 0
 
