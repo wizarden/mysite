@@ -56,7 +56,7 @@ class ProductImage(models.Model):
 class Slider(models.Model):
     slider_title = models.CharField(max_length=64, blank=True, null=True, default=None)
     slider_description = models.TextField(blank=True, null=True, default=None)
-    slider_image = models.ImageField(upload_to='category_images/', blank=True, null=True, default=None )
+    slider_image = models.ImageField(upload_to='slider_images/', blank=True, null=True, default=None )
     is_active = models.BooleanField(default=True)
     product = models.ForeignKey(Product, blank=True, null=True, default=None, on_delete=models.CASCADE)
 

@@ -40,7 +40,7 @@ admin.site.register(ProductCategory, ProductCategoryAdmin)
 
 
 
-# admin.site.register(Item)
+admin.site.register(Slider)
 
 
 
