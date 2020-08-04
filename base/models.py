@@ -1,9 +1,6 @@
 from django.db import models
 
-class Item(models.Model):
-    class Meta:
-        verbose_name = 'Элемент'
-        verbose_name_plural = 'Элементы'
+
         
 
 class ProductCategory(models.Model):
@@ -54,6 +51,21 @@ class ProductImage(models.Model):
     class Meta:
         verbose_name = 'Фотография'
         verbose_name_plural = 'Фотографии'
+
+
+class Slider(models.Model):
+    slider_title = models.CharField(max_length=64, blank=True, null=True, default=None)
+    slider_description = models.TextField(blank=True, null=True, default=None)
+    slider_image = models.ImageField(upload_to='category_images/', blank=True, null=True, default=None )
+    is_active = models.BooleanField(default=True)
+    product = models.ForeignKey(Product, blank=True, null=True, default=None, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "%s" % self.slider_title
+
+    class Meta:
+        verbose_name = 'Слайдер'
+        verbose_name_plural = 'Слайдер'
 
 
 
