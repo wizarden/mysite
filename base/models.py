@@ -9,6 +9,7 @@ class Item(models.Model):
 class ProductCategory(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
     description = models.TextField(blank=True, null=True, default=None)
+    category_image = models.ImageField(upload_to='category_images/', blank=True, null=True, default=None )
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

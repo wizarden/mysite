@@ -1,0 +1,21 @@
+  <!-- Start Categories  -->
+  {% load static %}
+
+  <div class="categories-shop">
+    <div class="container">
+        <div class="row">
+            {% for cat in category_list %}
+        
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="{{ cat.category_image.url }}" alt="{{cat.description}}" />
+                    <a class="btn hvr-hover" href="#">{{ cat.name }}</a>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+<!-- End Categories -->
