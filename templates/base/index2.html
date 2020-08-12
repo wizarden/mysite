@@ -1,0 +1,16 @@
+{% extends "basetemp.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- <input type="submit" value="index2" id="index2"> -->
+
+    <div id="index2" data-id="test_id" data-id2="test_id2" class="mysend" data-url="index3">
+        {% csrf_token %}
+        Send
+    </div>
+    {{ my }}
+</div>
+
+{% endblock %}
