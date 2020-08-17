@@ -1,4 +1,4 @@
-{% extends "basetemp.html" %}
+{% extends "basetemp2.html" %}
 
 {% block content %}
 
@@ -41,13 +41,16 @@
 
 
             <div class="card-body">
-                <p class="card-text"> {{ item.name }} {{ item.category}} </p>
+                <p class="card-text"> {{ item.name }} {{ item.category}} {{item.id}} </p>
             </div>
+
+            <form action="{% url 'order' %}" method="get">
+                <button type="submit" name="add" value="{{item.id}}">+</button>    
+            </form>
 
         </div>
         {% endfor %}
     </div>
 </div>
 
-{% include "base/includes/kusok.html" %}
 {% endblock %}

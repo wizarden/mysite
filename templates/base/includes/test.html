@@ -1,0 +1,7 @@
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    
+    <input type="text" name="send1" value="Vote1">
+    <input type="text" name="send2" value="Vote2">
+    <button type="submit" value="index2">Vote</button>    
+</form>
